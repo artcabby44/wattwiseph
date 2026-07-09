@@ -371,7 +371,7 @@ function App() {
           </span>
           <div>
             <span className="font-semibold text-slate-700 dark:text-slate-350 block">
-              WattWisePH © 2026 | Developed by: Logic Yard
+              WattWisePH © 2026 | Deployed by: James Cabiao 
             </span>
             <span className="font-medium text-slate-400 dark:text-slate-550">
               Wise choices lead to light bills.
