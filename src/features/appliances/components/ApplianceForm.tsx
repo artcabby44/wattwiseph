@@ -151,13 +151,13 @@ export function ApplianceForm({
             <Sparkles className="w-3.5 h-3.5 text-amber-500" />
             Quick Presets (Philippine Averages)
           </label>
-          <div className="flex flex-wrap gap-1.5 max-h-32 overflow-y-auto p-1 bg-slate-50 dark:bg-slate-950/60 rounded-xl border border-slate-100 dark:border-slate-850">
+          <div className="flex flex-wrap gap-1.5 max-h-32 overflow-y-auto p-1.5 bg-slate-50 dark:bg-slate-950/60 rounded-xl border border-slate-100 dark:border-slate-850">
             {PRESETS.map((preset) => (
               <button
                 key={preset.name}
                 type="button"
                 onClick={() => handleApplyPreset(preset)}
-                className="text-xs bg-white dark:bg-slate-900 border border-slate-250 dark:border-slate-800 hover:border-emerald-500 dark:hover:border-emerald-655 hover:bg-emerald-50/20 dark:hover:bg-emerald-950/10 px-2.5 py-1 rounded-lg text-slate-700 dark:text-slate-350 font-medium transition-all shadow-2xs hover:scale-102"
+                className="text-[11px] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-500 dark:hover:border-emerald-600 hover:bg-emerald-50/20 dark:hover:bg-emerald-950/10 px-2.5 py-1.5 rounded-lg text-slate-750 dark:text-slate-350 font-semibold transition-all shadow-3xs hover:scale-102 active:scale-95 cursor-pointer"
               >
                 {preset.name}
               </button>
@@ -304,13 +304,17 @@ export function ApplianceForm({
         {/* Submit */}
         <button
           type="submit"
-          className="w-full flex items-center justify-center gap-1.5 bg-emerald-650 hover:bg-emerald-600 text-white font-semibold py-2.5 px-4 rounded-xl shadow-xs hover:shadow-xs active:scale-98 transition-all cursor-pointer mt-2"
+          className={`w-full flex items-center justify-center gap-2 font-display text-sm md:text-base font-bold py-3 px-4 rounded-xl shadow-md hover:shadow-lg active:scale-[0.98] transition-all duration-300 cursor-pointer mt-3 border ${
+            editingAppliance
+              ? 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 border-amber-600 hover:border-orange-600 text-white hover:shadow-amber-500/20'
+              : 'bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 border-emerald-700 hover:border-teal-700 text-white hover:shadow-emerald-500/20'
+          }`}
         >
           {editingAppliance ? (
-            <>Save Changes</>
+            <>Save Appliance Changes</>
           ) : (
             <>
-              <Plus className="w-4 h-4" /> Add to Calculator
+              <Plus className="w-5 h-5 animate-pulse" /> Add to Calculator ⚡
             </>
           )}
         </button>
